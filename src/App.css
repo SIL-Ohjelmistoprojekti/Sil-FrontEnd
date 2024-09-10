@@ -1,8 +1,9 @@
 .container {
   position: relative;
   display: flex;
-  justify-content: center;
-  align-items: baseline;
+  flex-direction: column;
+  justify-content: baseline;
+  align-items: center;
   width: 100vw;
   height: 100vh;
 }
@@ -11,4 +12,11 @@
   position: relative;
   justify-content: center;
   align-items: center;
+}
+
+#current {
+  border: 1px solid black;
+  border-radius: 1rem;
+  padding: .5rem 2rem;
+  
 }
