@@ -1,7 +1,28 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const Current = () => {
-    
+
+    const [currentWeather, setCurrentWeather] = useState([]);
+
+
+    //! Fix the fetch 
+
+    useEffect(() => {
+        fetchWeather();
+    },[])
+
+    const fetchWeather = async () => {
+        try {
+            const response = await fetch("http://127.0.0.1:8000/weather/?muoto=json");
+            const data = await response.json();
+            
+            setCurrentWeather(data);
+            console.log(currentWeather.one_hour_rainfall);
+        } catch (err) {
+            throw new Error(err.message);
+        }
+    };
+
   return (
     <>
       <div id="current">
