@@ -1,25 +1,21 @@
 import React, { useEffect, useState } from "react";
+import json from "../json/weather.json";
 
 const Current = () => {
-
   const [currentWeather, setCurrentWeather] = useState([]);
 
-
-  //! Fix the fetch 
+  
 
   useEffect(() => {
     fetchWeather();
-  }, [])
+  }, []);
 
-  const fetchWeather = async () => {
+  const fetchWeather = () => { //! Change to fetch when backend is working
     try {
-      const response = await fetch("http://127.0.0.1:8000/weather/?muoto=json");
-      const data = await response.json();
-
-      setCurrentWeather(data);
-      console.log(currentWeather.one_hour_rainfall);
+      setCurrentWeather(json); 
+      console.log(json);
     } catch (err) {
-      throw new Error(err.message);
+      console.error(err);
     }
   };
 
@@ -28,8 +24,11 @@ const Current = () => {
       <div id="current">
         <h2>Weather now</h2>
         <p>Measured 10.9. 12:05</p>
-        <p id="temperature">temperature: 21.5°</p>
-        <p id="humidity">humidity: 59%</p>
+        <p id="temperature">Temperature: {currentWeather.temperature[0]}</p>
+        <p id="humidity">humidity: {currentWeather.humidity[0]}</p>
+        <p id="pressure">
+          Barometric pressure: {currentWeather.barometric_pressure[0]}
+        </p>
         <p id="sun">Sun: 06:37 - 19:56</p>
       </div>
     </>
