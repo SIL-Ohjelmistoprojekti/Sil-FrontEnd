@@ -21,13 +21,15 @@ const Current = () => {
         fetchWeather();
     }, []);
 
-    const fetchWeather = () => {
-        //! Change to fetch when backend is working
+    const fetchWeather = async () => {
         try {
-            setCurrentWeather(json);
-            console.log(json);
+            const response = await fetch("http://127.0.0.1:8000/weather/?muoto=json");
+            const data = await response.json();
+            
+            setCurrentWeather(data);
+            console.log(currentWeather.one_hour_rainfall);
         } catch (err) {
-            console.error(err);
+            throw new Error(err.message);
         }
     };
 
