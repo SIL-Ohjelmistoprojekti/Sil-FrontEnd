@@ -1,5 +1,5 @@
+// eslint-disable-next-line no-unused-vars
 import React, {useEffect, useState} from "react";
-import json from "../json/weather.json";
 
 const Current = () => {
     const [currentWeather, setCurrentWeather] = useState([]);
@@ -52,22 +52,22 @@ const Current = () => {
     };
 
     return (<>
-            <div id="current">
-                <h2>Weather now</h2>
-                <p>Measured {formatTime(measuredTime)}</p>
-                <p id="temperature">Temperature: {temperature}</p>
-                <p id="humidity">Humidity: {humidity}</p>
-                <p id="pressure">Barometric pressure: {barometric_pressure}</p>
-                <h3>Rain:</h3>
-                <p id="one_hour_rainfall">One Hour Rainfall: {one_hour_rainfall}</p>
-                <p id="twenty_four_hour_rainfall">24 Hour Rainfall: {twenty_four_hour_rainfall}</p>
-                <h3>Wind:</h3>
-                <p id="average_wind_speed">Average Wind Speed: {average_wind_speed}</p>
-                <p id="max_wind_speed">Max Wind Speed: {max_wind_speed}</p>
-                <p id="wind_direction">Wind Direction: {wind_direction}°</p>
-                <p id="sun">Sun: 06:37 - 19:56</p>
-            </div>
-        </>);
+        <div id="current">
+            <h2>Weather now</h2>
+            <p>Measured {formatTime(measuredTime)}</p>
+            <p id="temperature">Temperature: {temperature}</p>
+            <p id="humidity">Humidity: {humidity}</p>
+            <p id="pressure">Barometric pressure: {barometric_pressure}</p>
+            <h3>Rain:</h3>
+            <p id="one_hour_rainfall">One Hour Rainfall: {one_hour_rainfall}</p>
+            <p id="twenty_four_hour_rainfall">24 Hour Rainfall: {twenty_four_hour_rainfall}</p>
+            <h3>Wind:</h3>
+            <p id="average_wind_speed">Average Wind Speed: {average_wind_speed}</p>
+            <p id="max_wind_speed">Max Wind Speed: {max_wind_speed}</p>
+            <p id="wind_direction">Wind Direction: {wind_direction}°</p>
+            <p id="sun">Sun: 06:37 - 19:56</p>
+        </div>
+    </>);
 };
 
 export default Current;
