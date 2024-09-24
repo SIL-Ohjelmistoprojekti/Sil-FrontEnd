@@ -65,7 +65,6 @@ const Current = () => {
             <p id="average_wind_speed">Average Wind Speed: {average_wind_speed}</p>
             <p id="max_wind_speed">Max Wind Speed: {max_wind_speed}</p>
             <p id="wind_direction">Wind Direction: {wind_direction}°</p>
-            <p id="sun">Sun: 06:37 - 19:56</p>
         </div>
     </>);
 };
