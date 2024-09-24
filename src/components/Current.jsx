@@ -33,14 +33,14 @@ const Current = () => {
         }
     };
 
-    let temperature = currentWeather.temperature;
-    let humidity = currentWeather.humidity;
-    let barometric_pressure = currentWeather.barometric_pressure;
-    let one_hour_rainfall = currentWeather.one_hour_rainfall;
-    let twenty_four_hour_rainfall = currentWeather.twenty_four_hour_rainfall;
-    let average_wind_speed = currentWeather.average_wind_speed;
-    let max_wind_speed = currentWeather.max_wind_speed;
-    let wind_direction = currentWeather.wind_direction;
+    let temperature = currentWeather.temperature[0];
+    let humidity = currentWeather.humidity[0];
+    let barometric_pressure = currentWeather.barometric_pressure[0];
+    let one_hour_rainfall = currentWeather.one_hour_rainfall[0];
+    let twenty_four_hour_rainfall = currentWeather.twenty_four_hour_rainfall[0];
+    let average_wind_speed = currentWeather.average_wind_speed[0];
+    let max_wind_speed = currentWeather.max_wind_speed[0];
+    let wind_direction = currentWeather.wind_direction[0];
 
 
     const formatTime = (date) => {
