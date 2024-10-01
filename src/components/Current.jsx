@@ -5,20 +5,16 @@ const Current = () => {
     const [currentWeather, setCurrentWeather] = useState([]);
     const [measuredTime, setMeasuredTime] = useState(new Date());
 
-    function runEveryMinute() {
+    function runEverySecond() {
         console.log("Running code every 5 minutes!");
         setMeasuredTime(new Date());
     }
 
     useEffect(() => {
-        runEveryMinute();
-        const interval = setInterval(runEveryMinute, 60000);
+        runEverySecond();
+        const interval = setInterval(runEverySecond, 1000);
 
         return () => clearInterval(interval);
-    }, []);
-
-    useEffect(() => {
-        fetchWeather();
     }, []);
 
     const fetchWeather = async () => {
@@ -32,6 +28,13 @@ const Current = () => {
             throw new Error(err.message);
         }
     };
+
+    useEffect(() => {
+        fetchWeather();
+        const weatherInterval = setInterval(fetchWeather, 60000);
+
+        return () => clearInterval(weatherInterval);
+    }, []);
 
     let temperature = currentWeather.temperature;
     let humidity = currentWeather.humidity;
@@ -48,13 +51,14 @@ const Current = () => {
         const month = String(date.getMonth() + 1).padStart(2, "0");
         const hours = String(date.getHours()).padStart(2, "0");
         const minutes = String(date.getMinutes()).padStart(2, "0");
-        return `${day}.${month}. ${hours}:${minutes}`;
+        const seconds = String(date.getSeconds()).padStart(2, "0");
+        return `${day}.${month}. ${hours}:${minutes}:${seconds}`;
     };
 
     return (<>
         <div id="current">
             <h2>Weather now</h2>
-            <p>Measured {formatTime(measuredTime)}</p>
+            <p>{formatTime(measuredTime)}</p>
             <p id="temperature">Temperature: {temperature}</p>
             <p id="humidity">Humidity: {humidity}</p>
             <p id="pressure">Barometric pressure: {barometric_pressure}</p>
