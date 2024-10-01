@@ -14,6 +14,8 @@
   justify-content: center;
   align-items: center;
   color: lemonchiffon;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border-bottom: 2px solid lemonchiffon;
 }
 
 #current {
@@ -25,6 +27,7 @@
 
 #current > h2, p, h3 {
   color: lemonchiffon;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 #current > h2 {
