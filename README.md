@@ -1,10 +1,7 @@
-# React + Vite
+Projektin nimi on "Weather station service".
 
-## Hello this is a test
+Tämän sovelluksen tarkoituksena tarjota ajantasaista säätietoa esimerkiksi lentäjille tai muille käyttääjille, jotka tarvitsevat luotettavia säätietoja päätöksenteon tueksi. Sovellus kokoaa ja näyttää tärkeitä sääparametreja, kuten lämpötilan, tuulen nopeuden, tuulen suunnan, sademäärän ja näkyvyyden, jotta käyttäjät voivat suunnitella toimenpiteitänsä turvallisesti ja tarkasti.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Tärkeimmät ominaisuudet: Tarkastella reaaliaikaisia säätietoja eri paikkakunnilta tai lentokentiltä. Tarkastella historiallisia säätietoja, suunnittelua varten. Saada varoituksia vaarallisista sääilmiöistä, kuten ukkosmyrskyistä ja kovasta tuulesta. Näyttää säätietoja graafisina visualisointeina, kuten kaavioina ja kuvina.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Toteutusteknologiat: Backend: Python ja Django, joka toimii sovelluksen palvelinpuolen alustana, huolehtien säätietojen hakemisesta ja käsittelystä. Frontend: React, joka tarjoaa interaktiivisen ja käyttäjäystävällisen käyttöliittymän, jossa käyttäjä voi helposti tarkastella ja etsiä säätietoja. Tietokanta: PostgreSQL, säätietojen tallennusta varten.
