@@ -6,7 +6,7 @@ const Current = () => {
     const [measuredTime, setMeasuredTime] = useState(new Date());
 
     function runEverySecond() {
-        console.log("Running code every 5 minutes!");
+        console.log("Running code every second!");
         setMeasuredTime(new Date());
     }
 
@@ -24,6 +24,7 @@ const Current = () => {
 
             setCurrentWeather(data);
             console.log(currentWeather.one_hour_rainfall);
+            console.log("Running code every minute")
         } catch (err) {
             throw new Error(err.message);
         }
